@@ -75,20 +75,32 @@ export class HttpService {
   }
 
   buscarPelicula(pelicula: string): Array<Object> {
-    let peliculas = [];
+    let peliculas: pelicula[] = [];
     this.http
       .get('https://watchmovieskubo.herokuapp.com/api/peliculas', {
         headers: this.headers,
       })
       .subscribe((response: string) => {
-        for (let res of response) {
-          let peli: string = res['titulo'];
+        for (let i = 0; response.length - 1; i++) {
+          let peli = response[i]['titulo'];
           if (peli.toLowerCase().indexOf(pelicula) >= 0) {
-            peliculas.push(res);
+            peliculas[i] = peli;
           }
         }
       });
 
     return peliculas;
   }
+}
+
+export interface pelicula {
+  titulo?: string;
+  descripcion?: string;
+  duracion?: string;
+  calificacion?: number;
+  imagepath?: string;
+  categorias?: string;
+  trailer?: string;
+  estreno?: string;
+  _id?: string;
 }

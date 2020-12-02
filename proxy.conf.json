@@ -1,0 +1,7 @@
+{
+  "/api/*":{
+    "target":"https://serverless.crokenx.vercel.app",
+    "secure":false,
+    "logLevel":"debug"
+  }
+}

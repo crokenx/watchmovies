@@ -1,0 +1,22 @@
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col">
+      <div class="registro">Login</div>
+      <form [formGroup] = "form" (ngSubmit)="submitForm()">
+        <div class="email">
+          <input id="email" [formControlName]="'username'" type="email" placeholder="Ingrese correo">
+        </div>
+        <div class="password">
+          <input id="password" [formControlName]="'password'" type="password" placeholder="Ingrese contraseña">
+        </div>
+          <button id="btn" [disabled]="!form.valid" class="btn btn-primary" type="submit">Ingresar</button>
+      </form>
+      <a routerLink="/registro" routerLinkActive="active">Registrarse</a>
+    </div>
+
+  </div>
+
+</div>

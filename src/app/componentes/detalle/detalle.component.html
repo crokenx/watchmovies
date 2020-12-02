@@ -1,0 +1,26 @@
+<div class="container p-4">
+  <div class="row">
+
+    <div class="col-md-4">
+      <img alt="{{ pelicula.titulo }}" class="img-fluid mb-3" src="https://watchmovieskubo.herokuapp.com{{ pelicula.imagepath }}"/>
+      <div [routerLink]="['/home/formulario']" class="btn btn-outline-danger btn-block">regresar</div>
+    </div>
+
+    <div class="col-md-8">
+
+      <div class="jumbotron">
+        <h2 class="display-4">{{ pelicula.titulo }}</h2>
+        <star-rating value="{{ pelicula.calificacion }}" totalstars="{{ total }}" checkedcolor="orange" uncheckedcolor="grey" size="24px" reaonly="false" (rate)="onRate($event, pelicula._id)"></star-rating>
+        <hr>
+        <p class="lead">{{ pelicula.descripcion }}</p>
+        <hr>
+        <h5>duracion: {{ pelicula.duracion }}</h5>
+        <h5>categorias: {{ pelicula.categorias }}</h5>
+        <h5>estreno: {{ pelicula.estreno }}</h5>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,28 @@
+.navbar {
+  color: white;
+}
+
+.col-md-8{
+  position: relative;
+}
+
+.star{
+  display: inline-flex;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.container{
+  padding: 0px;
+  text-align: center;
+  margin: 0;
+  height: 30px;
+}
+
+.star:hover{
+  color: #F0B412;
+}
+
+.rate{
+  color: blue;
+}

@@ -1,0 +1,28 @@
+.row {
+  background-color: rgba(185, 207, 219, 0.788);
+  margin: 0 auto;
+  /* display: flex; */
+  margin-top: 200px;
+  height: flex;
+  max-width: 400px;
+  border-radius: 4px;
+}
+
+div input {
+  margin-top: 50px;
+  height: 40px;
+  width: calc(100%);
+  border-radius: 4px;
+  border: 0 solid;
+}
+
+.btn {
+  width: calc(100%);
+  margin-top: 50px;
+}
+
+.registro {
+  margin-top: 20px;
+  color: white;
+  font-size: 30px;
+}

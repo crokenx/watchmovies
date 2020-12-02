@@ -1,0 +1,26 @@
+<div class="container p-5">
+<div class="col-md-8" id="pelis-cards">
+      <div class="card-columns">
+      <div [attr._id]="peli._id" class="card" *ngFor="let peli of peliculas">
+        <img class="card-img-top img-fluid" alt="Card image cap" src="https://watchmovieskubo.herokuapp.com{{ peli.imagepath }}"/>
+        <div  class="card-body">
+          <h5 class="card-title">
+            {{ peli.titulo }}
+          </h5>
+          <p class="card-text">{{ peli.descripcion }}</p>
+          <a [routerLink]="['/home/detalle', peli._id ]" class="btn btn-primary btn-block">Go peli</a>
+<!--es mejor utilizar el ng starrating-->
+          <!--<ol class="container">-->
+            <!--cuando se coloca una etiqueta #algo, procurar no volver a utilizar este valor ya que genera conflictos dentro del flujo de trabajo-->
+            <!--<li value="{{ i }}" type="radio" [class.rate]="isRated" (click)="rating(valor.value, peli._id)"  #valor *ngFor="let i of [1,2,3,4,5]" class="star">-->
+             <!--*-->
+            <!--</li>-->
+          <!--</ol>-->
+<!--se requiere que "totalstars" se encuentre asociado a un variable local del componente-->
+<!--value es el valor del rating que voy a guardar en mongo-->
+          <star-rating value="{{ peli.calificacion }}" totalstars="{{ total }}" checkedcolor="orange" uncheckedcolor="grey" size="24px" reaonly="false" (rate)="onRate($event, peli._id)"></star-rating>
+        </div>
+      </div>
+      </div>
+    </div>
+</div>
